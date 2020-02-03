@@ -10,19 +10,19 @@ function service({ service, description, port, wsPort } = {}) {
 }
 
 async function connect(service, description, port, wsPort) {
-  const ws = new WebSocket(`ws://localhost:${wsPort}`)
+  const wsUrl = `ws://localhost:${wsPort}`
+  const ws = new WebSocket(wsUrl)
   await new Promise(resolve => {
     ws.on('close', () => {
-      console.log('closed')
       resolve()
     })
 
     ws.on('error', () => {
-      console.log('errored')
+      // Silently retry registering
     })
 
     ws.on('open', () => {
-      console.log('opened')
+      console.log(`Registering to localsd service at ${wsUrl}`)
       ws.send(JSON.stringify({ service, description, port }))
     })
 

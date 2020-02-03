@@ -14,7 +14,16 @@ function registry({ httpPort, wsPort } = {}) {
 
   const server = http
     .createServer((req, res) => {
-      res.write(JSON.stringify(registry.getList()))
+      switch (req.url) {
+        case '/':
+          res.write('hi')
+          break
+        case '/api':
+          res.write(JSON.stringify(registry.getList()))
+          break
+        default:
+          res.write('🐢404')
+      }
       res.end()
     })
     .listen(httpPort, () => {
