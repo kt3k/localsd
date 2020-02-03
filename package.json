@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "ws": "^7.2.1"
+  },
+  "name": "localsd",
+  "description": "Localhost Service Discovery service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "defaultWsPort": 36951,
+  "defaultHttpPort": 32000,
+  "devDependencies": {},
+  "bin": "./bin/localsd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fmt": "deno fmt --single-quote --no-semi *.js bin.*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kt3k/localsd.git"
+  },
+  "keywords": [
+    "service",
+    "discovery"
+  ],
+  "author": "Yoshiya Hinosawa",
+  "license": "BlueOak-1.0.0",
+  "bugs": {
+    "url": "https://github.com/kt3k/localsd/issues"
+  },
+  "homepage": "https://github.com/kt3k/localsd#readme"
+}

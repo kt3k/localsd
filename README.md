@@ -1,6 +1,6 @@
 # localsd v0.1.0
 
-> Local Service Discovery service
+> Localhost Service Discovery service
 
 Do you have many services hosted in localhost like `localhost:NNNN`? Do you often forget which service is hosted at which port number?
 
@@ -40,4 +40,4 @@ require('localsd').service({
 
 # License
 
-Blue Oak Model License 1.0.0
+BlueOak-1.0.0
