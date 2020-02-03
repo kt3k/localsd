@@ -1,9 +1,14 @@
 const http = require('http')
 const ws = require('ws')
+const fs = require('fs')
+const path = require('path')
 const assert = require('assert')
 const { defaultWsPort, defaultHttpPort } = require('./package')
 
 module.exports = registry
+
+const script = fs.readFileSync(path.join(__dirname, 'script.js'), 'utf-8')
+const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8')
 
 function registry({ httpPort, wsPort } = {}) {
   httpPort = httpPort || defaultHttpPort
@@ -16,10 +21,13 @@ function registry({ httpPort, wsPort } = {}) {
     .createServer((req, res) => {
       switch (req.url) {
         case '/':
-          res.write('hi')
+          res.write(html)
           break
         case '/api':
           res.write(JSON.stringify(registry.getList()))
+          break
+        case '/script.js':
+          res.write(script)
           break
         default:
           res.write('🐢404')
