@@ -1,7 +1,7 @@
 {
   "name": "localsd",
   "description": "Localhost Service Discovery service",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "index.js",
   "defaultWsPort": 36951,
   "defaultHttpPort": 32000,
