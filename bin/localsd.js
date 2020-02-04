@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const assert = require('assert')
 const { registry, version, help, service, group, port, description } = require('minimist')(process.argv.slice(2), {
   boolean: ['registry', 'version', 'help'],
