@@ -1,13 +1,14 @@
 const assert = require('assert')
-const { registry, version, help, service, port, description } = require('minimist')(process.argv.slice(2), {
+const { registry, version, help, service, group, port, description } = require('minimist')(process.argv.slice(2), {
   boolean: ['registry', 'version', 'help'],
-  string: ['service', 'port', 'descrption'],
+  string: ['service', 'port', 'descrption', 'group'],
   alias: {
     h: 'help',
     v: 'version',
     s: 'service',
     p: 'port',
     d: 'description',
+    g: 'group'
   }
 })
 
@@ -21,6 +22,7 @@ if (registry) {
 
   require('../service')({
     service,
+    group,
     port: portNumber,
     description
   })
