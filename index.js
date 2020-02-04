@@ -1,2 +1,2 @@
-exports.service = require('./service')
-exports.registry = require('./registry')
+exports.service = require("./service");
+exports.registry = require("./registry");

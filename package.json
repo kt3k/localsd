@@ -13,7 +13,7 @@
   "bin": "./bin/localsd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fmt": "deno fmt --single-quote --no-semi *.js bin.*.js"
+    "fmt": "deno fmt *.js bin.*.js"
   },
   "repository": {
     "type": "git",
