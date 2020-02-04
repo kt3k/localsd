@@ -1,4 +1,4 @@
-# localsd v0.3.0
+# localsd v0.3.1
 
 > Localhost Service Discovery service
 
